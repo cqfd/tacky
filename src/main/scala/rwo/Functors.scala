@@ -8,9 +8,9 @@ import scala.language.reflectiveCalls
  */
 object ATrivialExample {
   trait XIntSig {
-    def x : Int
+    def x: Int
   }
-  def increment(M : XIntSig) : XIntSig = new XIntSig {
+  def increment(M: XIntSig): XIntSig = new XIntSig {
     def x = M.x + 1
   }
   val Three = new XIntSig {
@@ -21,11 +21,11 @@ object ATrivialExample {
 }
 
 object ATrivialExampleWithStructuralTypes {
-  type XIntSig = { def x : Int }
-  def increment(M : XIntSig) : XIntSig = new {
+  type XIntSig = { def x: Int }
+  def increment(M: XIntSig): XIntSig = new {
     def x = M.x + 1
   }
-  val Three : XIntSig = new {
+  val Three = new {
     def x = 3
   }
   val Four = increment(Three)
